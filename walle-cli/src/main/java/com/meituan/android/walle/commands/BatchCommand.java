@@ -72,9 +72,10 @@ public class BatchCommand implements IWalleCommand {
     }
 
     private void generateChannelApk(final File inputFile, final File outputDir, final String channel) {
-        final String name = FilenameUtils.getBaseName(inputFile.getName());
-        final String extension = FilenameUtils.getExtension(inputFile.getName());
-        final String newName = name + "_" + channel + "." + extension;
+        final String fileName = inputFile.getName();
+//        final String name = FilenameUtils.getBaseName(inputFile.getName());
+//        final String extension = FilenameUtils.getExtension(inputFile.getName());
+        final String newName = fileName.replace("channel", channel);
         final File channelApk = new File(outputDir, newName);
         try {
             FileUtils.copyFile(inputFile, channelApk);
