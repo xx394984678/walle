@@ -1,0 +1,14 @@
+ext {
+    minSdkVersion = 9
+    compileSdkVersion = 31
+    targetSdkVersion = compileSdkVersion
+    buildToolsVersion = '31.0.0'
+    javaVersion = JavaVersion.VERSION_1_7
+
+    def vcinemaConfigFile = rootProject.file("vcinema.properties")
+    Properties properties = new Properties()
+    properties.load(new FileInputStream(vcinemaConfigFile))
+
+    releasesRepoUrl = properties.getProperty("releasesRepoUrl")
+    snapshotsRepoUrl = properties.getProperty("snapshotsRepoUrl")
+}

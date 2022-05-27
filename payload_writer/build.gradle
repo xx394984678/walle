@@ -1,8 +1,9 @@
 apply plugin: 'java'
+apply from: '../maven_push.gradle'
 apply from: rootProject.file('quality.gradle')
 
 dependencies {
-    implementation project(path: ':payload_reader')
+    implementation 'com.vcinema.library.walle:payload_reader:1.0.0'
     compileOnly 'org.json:json:20080701'//提供org.json环境，开发时注意与Android org.json api兼容
 }
 
