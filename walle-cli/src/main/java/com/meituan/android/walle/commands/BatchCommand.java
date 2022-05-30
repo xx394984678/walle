@@ -75,7 +75,7 @@ public class BatchCommand implements IWalleCommand {
         final String fileName = inputFile.getName();
 //        final String name = FilenameUtils.getBaseName(inputFile.getName());
 //        final String extension = FilenameUtils.getExtension(inputFile.getName());
-        final String newName = fileName.replace("aph666", channel);
+        final String newName = fileName.replace("channel", channel);
         final File channelApk = new File(outputDir, newName);
         try {
             FileUtils.copyFile(inputFile, channelApk);
